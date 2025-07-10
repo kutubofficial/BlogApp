@@ -1,0 +1,8 @@
+1. we need to fetch one blog--- with ID (if we click the any particular blog it will open separately)
+2. ask to sir --- how to target the edit blog -- like in backend we have update blog (single end point with patch method)
+but we need two method -- first get and second patch (how we handle..??)
+3. delete the targeted blog with ID.
+
+upcoming features--- depends on sir 
+
+create a search engine----- which display blog who loggedIn
