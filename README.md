@@ -47,17 +47,29 @@ root/
 │ ├── controllers/
 
 │ ├── models/
+
 │ ├── routes/
+
 │ ├── middleware/
+
 │ ├── .env
+
 │ └── server.js
+
 ├── frontend/
+
 │ ├── components/
+
 │ ├── pages/
+
 │ ├── AuthProvider.jsx
+
 │ ├── App.jsx
+
 │ └── main.jsx
+
 ├── .gitignore
+
 └── README.md
 
 
