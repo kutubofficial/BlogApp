@@ -5,10 +5,10 @@ import { useParams, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FiArrowLeft } from "react-icons/fi";
 import { MdOutlineSave } from "react-icons/md";
+import BASE_URL from "../../config/api";
 
 const EditBlog = () => {
   const { id } = useParams();
-  const BASE_URL = "http://localhost:5000";
   const [editBlog, setEditBlog] = useState({ title: "", content: "" });
   const [loading, setLoading] = useState(false);
   const { isAuthenticated } = useContext(AuthContext);

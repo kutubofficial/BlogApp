@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import BASE_URL from "../../config/api";
 
 const AllBlogs = ({ blogs, setBlogs }) => {
-  const BASE_URL = "http://localhost:5000";
 
   const fetchBlogs = async () => {
     try {

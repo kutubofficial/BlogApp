@@ -5,9 +5,9 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { TfiWrite } from "react-icons/tfi";
 import { CgProfile } from "react-icons/cg";
+import BASE_URL from "../../config/api";
 
 const Navbar = () => {
-  const BASE_URL = "http://localhost:5000";
   const { isAuthenticated, user, setIsAuthenticated, setUser } =
     useContext(AuthContext);
   const navigate = useNavigate();

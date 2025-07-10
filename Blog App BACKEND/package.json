@@ -1,12 +1,15 @@
 {
   "name": "blog-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "MERN Blog App Backend",
   "main": "index.js",
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
   "keywords": [],
-  "author": "",
+  "author": "Kutub",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^3.0.2",

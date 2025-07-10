@@ -5,11 +5,11 @@ import { useParams, useNavigate } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 import { MdDeleteOutline } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
+import BASE_URL from "../../config/api";
 
 const ViewSingleBlog = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const BASE_URL = "http://localhost:5000";
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
 

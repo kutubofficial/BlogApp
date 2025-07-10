@@ -4,6 +4,7 @@ import { FaUserAlt, FaLock } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../components/AuthProvider";
+import BASE_URL from "../config/api";
 
 const Login = () => {
   const { setIsAuthenticated, setUser } = useContext(AuthContext);
@@ -12,7 +13,6 @@ const Login = () => {
     email: "",
     password: "",
   });
-  const BASE_URL = "http://localhost:5000";
 
   const navigate = useNavigate();
 

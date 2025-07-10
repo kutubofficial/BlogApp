@@ -1,12 +1,13 @@
 import React, { createContext, useEffect, useState } from "react";
 import axios from "axios";
+import BASE_URL from "../config/api";
+
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
-  const BASE_URL = "http://localhost:5000";
   useEffect(() => {
     const checkLoginStatus = async () => {
       try {

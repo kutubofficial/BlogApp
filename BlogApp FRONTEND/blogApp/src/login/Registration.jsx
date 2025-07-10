@@ -3,6 +3,7 @@ import { FaUserAlt, FaEnvelope, FaLock } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+import BASE_URL from "../config/api";
 
 const Registration = () => {
   const [signupData, setSignupData] = useState({
@@ -10,7 +11,6 @@ const Registration = () => {
     email: "",
     password: "",
   });
-  const BASE_URL = "http://localhost:5000";
   const navigate = useNavigate();
   const handleChange = (e) => {
     const { name, value } = e.target;

@@ -5,9 +5,9 @@ import { AuthContext } from "../../AuthProvider";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { defaultAvatar, defaultBlogImage } from "../../../assets/avtar";
+import BASE_URL from "../../../config/api";
 
 const Profile = () => {
-  const BASE_URL = "http://localhost:5000";
   const [profileData, setProfileData] = useState(null);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
