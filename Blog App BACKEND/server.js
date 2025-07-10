@@ -23,6 +23,9 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+app.get("/", (req, res) => {
+  res.send("API is running successfully 🚀");
+});
 
 app.use("/v1/users", userRoutes);
 app.use("/v1/blogs", blogRoutes);
