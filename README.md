@@ -107,7 +107,9 @@ npm install
 npm run dev
 ```
 The frontend will run on: http://localhost:5173
+
 ##🧪 API Routes
+
 🔑 Auth Routes
 ```bash
 POST   /v1/users/register
