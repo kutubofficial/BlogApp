@@ -84,7 +84,7 @@ git clone https://github.com/kutubofficial/BlogApp.git
 cd blog-app
 ```
 
-##🖥️ Backend Setup
+## 🖥️ Backend Setup
 ```bash
 cd backend
 npm install
@@ -108,7 +108,7 @@ npm run dev
 ```
 The frontend will run on: http://localhost:5173
 
-##🧪 API Routes
+## 🧪 API Routes
 
 🔑 Auth Routes
 ```bash
