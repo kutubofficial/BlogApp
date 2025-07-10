@@ -127,6 +127,7 @@ PUT    /v1/blogs/update/:id
 DELETE /v1/blogs/delete/:id
 ```
 ##🙌 Author
+
 Kutubuddin Ansari
 
 
