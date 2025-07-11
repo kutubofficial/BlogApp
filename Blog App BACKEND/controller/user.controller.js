@@ -42,10 +42,11 @@ export const login = expressAsyncHandler(async (req, res) => {
   let token = await generateJWTToken(loginUser._id);
   console.log("TOKEN --", token);
   res.cookie("myCookie", token, {
-    maxAge: 1 * 60 * 60 * 1000,
+    // maxAge: 1 * 60 * 60 * 1000,
+    maxAge: 7 * 24 * 60 * 60 * 1000,
     httpOnly: true,
-    // sameSite
-    // secure
+    sameSite: "None",
+    secure: true,
     // path
   });
   // console.log("LOGIN USER - ", loginUser);
