@@ -20,7 +20,7 @@ app.use(
     origin: process.env.CLIENT_URL || "http://localhost:5173",
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    allowedHeaders: ["Content-Type", "Authorization","Cache-Control", "Expires", "Pragma"],
   })
 );
 app.get("/", (req, res) => {
