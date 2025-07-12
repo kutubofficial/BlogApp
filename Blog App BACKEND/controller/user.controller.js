@@ -45,7 +45,7 @@ export const login = expressAsyncHandler(async (req, res) => {
     // maxAge: 1 * 60 * 60 * 1000,
     maxAge: 7 * 24 * 60 * 60 * 1000,
     httpOnly: true,
-    sameSite: "None",
+    // sameSite: "None",
     secure: true,
     // path
   });
