@@ -5,7 +5,7 @@ import { AuthContext } from "../../AuthProvider";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { defaultAvatar, defaultBlogImage } from "../../../assets/avtar";
-import BASE_URL from "../../../config/api";
+import BASE_URL, { AxiosInstance } from "../../../config/api";
 
 const Profile = () => {
   const [profileData, setProfileData] = useState(null);
@@ -17,9 +17,10 @@ const Profile = () => {
   const fetchProfile = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get(`${BASE_URL}/v1/users/profile/${id}`, {
-        withCredentials: true,
-      });
+      // const { data } = await axios.get(`${BASE_URL}/v1/users/profile/${id}`, {
+      //   withCredentials: true,
+      // });
+      const { data } = await AxiosInstance.get(`/users/profile/${id}`);
       setProfileData(data.user);
     } catch (error) {
       console.error("Error fetching profile:", error);

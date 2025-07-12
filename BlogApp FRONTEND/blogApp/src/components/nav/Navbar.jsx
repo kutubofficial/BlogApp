@@ -5,7 +5,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { TfiWrite } from "react-icons/tfi";
 import { CgProfile } from "react-icons/cg";
-import BASE_URL from "../../config/api";
+import { AxiosInstance } from "../../config/api";
 
 const Navbar = () => {
   const { isAuthenticated, user, setIsAuthenticated, setUser } =
@@ -14,11 +14,12 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post(
-        `${BASE_URL}/v1/users/logout`,
-        {},
-        { withCredentials: true }
-      );
+      // await axios.post(
+      //   `${BASE_URL}/v1/users/logout`,
+      //   {},
+      //   { withCredentials: true }
+      // );
+      await AxiosInstance.post("/users/logout",{});
       setIsAuthenticated(false);
       setUser(null);
       toast.success("Logout successful");

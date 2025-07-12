@@ -5,7 +5,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FiArrowLeft } from "react-icons/fi";
 import { MdOutlineSave } from "react-icons/md";
-import BASE_URL from "../../config/api";
+import BASE_URL, { AxiosInstance } from "../../config/api";
 
 const EditBlog = () => {
   const { id } = useParams();
@@ -17,9 +17,10 @@ const EditBlog = () => {
   useEffect(() => {
     async function fetchBlog() {
       try {
-        const { data } = await axios.get(
-          `${BASE_URL}/v1/blogs/fetch-one/${id}`
-        );
+        // const { data } = await axios.get(
+        //   `${BASE_URL}/v1/blogs/fetch-one/${id}`
+        // );
+        const { data } = await AxiosInstance.get(`/blogs/fetch-one/${id}`);
         if (data.success && data.singleBlog) {
           setEditBlog({
             title: data.singleBlog.title,

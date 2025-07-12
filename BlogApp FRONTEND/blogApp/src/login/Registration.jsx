@@ -3,7 +3,7 @@ import { FaUserAlt, FaEnvelope, FaLock } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
-import BASE_URL from "../config/api";
+import BASE_URL, { AxiosInstance } from "../config/api";
 
 const Registration = () => {
   const [signupData, setSignupData] = useState({
@@ -21,7 +21,8 @@ const Registration = () => {
     e.preventDefault();
     // console.log(signupData);
     try {
-      axios.post(`${BASE_URL}/v1/users/register`, signupData);
+      // axios.post(`${BASE_URL}/v1/users/register`, signupData);
+      AxiosInstance.post(`/user/register`, signupData);
       toast.success("User registered successfully");
       navigate("/login");
     } catch (error) {

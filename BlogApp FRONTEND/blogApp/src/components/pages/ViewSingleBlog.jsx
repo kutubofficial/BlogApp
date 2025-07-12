@@ -5,7 +5,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 import { MdDeleteOutline } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
-import BASE_URL from "../../config/api";
+import BASE_URL, { AxiosInstance } from "../../config/api";
 
 const ViewSingleBlog = () => {
   const { id } = useParams();
@@ -15,7 +15,8 @@ const ViewSingleBlog = () => {
 
   const fetchBlog = async () => {
     try {
-      const { data } = await axios.get(`${BASE_URL}/v1/blogs/fetch-one/${id}`);
+      // const { data } = await axios.get(`${BASE_URL}/v1/blogs/fetch-one/${id}`);
+      const { data } = await AxiosInstance.get(`/blogs/fetch-one/${id}`);
       console.log("data from single blog", data);
       if (data.success && data.singleBlog) {
         setBlog(data.singleBlog);
@@ -76,7 +77,7 @@ const ViewSingleBlog = () => {
         className="flex items-center text-pink-800 cursor-pointer hover:text-pink-600 mb-6 transition"
       >
         <FiArrowLeft className="mr-2" />
-        Back 
+        Back
       </button>
 
       <div className="bg-white p-6 rounded-lg shadow-sm">
@@ -96,7 +97,7 @@ const ViewSingleBlog = () => {
         <div className="flex gap-3 mt-8">
           <button
             onClick={() => {
-              navigate(`/edit/${id}`)
+              navigate(`/edit/${id}`);
             }}
             className="px-4 py-2 border cursor-pointer border-gray-300 rounded hover:bg-gray-100 transition"
           >

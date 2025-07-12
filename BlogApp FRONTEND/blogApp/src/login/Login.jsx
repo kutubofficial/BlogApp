@@ -4,7 +4,7 @@ import { FaUserAlt, FaLock } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../components/AuthProvider";
-import BASE_URL from "../config/api";
+import BASE_URL, { AxiosInstance } from "../config/api";
 
 const Login = () => {
   const { setIsAuthenticated, setUser } = useContext(AuthContext);
@@ -25,10 +25,11 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post(`${BASE_URL}/v1/users/login`, loginData, {
-        withCredentials: true,
-      });
-
+      // const res = await axios.post(`${BASE_URL}/v1/users/login`, loginData, {
+      //   withCredentials: true,
+      // });
+      const res = await AxiosInstance.post(`/users/login`, loginData)
+      console.log(res)
       setIsAuthenticated(true);
       setUser(res.data.user);
       console.log(res.data.user);

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { MdOutlineCreate } from "react-icons/md";
 import { MdCreate } from "react-icons/md";
-import BASE_URL from "../../config/api";
+import BASE_URL, { AxiosInstance } from "../../config/api";
 
 const CreateBlog = ({ setBlogs }) => {
   const { isAuthenticated } = useContext(AuthContext);
@@ -41,9 +41,10 @@ const CreateBlog = ({ setBlogs }) => {
 
     setLoading(true);
     try {
-      const { data } = await axios.post(`${BASE_URL}/v1/blogs/add`, newBlog, {
-        withCredentials: true,
-      });
+      // const { data } = await axios.post(`${BASE_URL}/v1/blogs/add`, newBlog, {
+      //   withCredentials: true,
+      // });
+      const { data } = await AxiosInstance.post(`/blogs/add`);
 
       if (data.success && data.data) {
         toast.success("Blog created successfully");

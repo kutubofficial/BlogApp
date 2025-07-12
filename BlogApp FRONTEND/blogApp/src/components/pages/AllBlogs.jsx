@@ -2,13 +2,13 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
-import BASE_URL from "../../config/api";
+import BASE_URL, { AxiosInstance } from "../../config/api";
 
 const AllBlogs = ({ blogs, setBlogs }) => {
-
   const fetchBlogs = async () => {
     try {
-      const { data } = await axios.get(`${BASE_URL}/v1/blogs/fetch-all`);
+      // const { data } = await axios.get(`${BASE_URL}/v1/blogs/fetch-all`);
+      const { data } = await AxiosInstance.get(`/blogs/fetch-all`);
       if (data.success && data.allBlogs) {
         setBlogs(data.allBlogs);
       } else {
